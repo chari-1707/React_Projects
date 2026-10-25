@@ -1,7 +1,8 @@
 import React from "react";
 
-function card(props) {
-    console.log(props);
+function card({ username }) {
+    // you can write this or there is another way that is destructure it like what ever you want take that only
+    // console.log(props);
     return (
         <div>
             <div className="flex flex-col items-center p-7 rounded-2xl">
@@ -13,8 +14,8 @@ function card(props) {
                     />
                 </div>
                 <div className="flex">
-                    <span className="text-2xl font-medium">Class Warfare</span>
-                    <span className="font-medium text-sky-500">The Anti-Patterns</span>
+                    <span className="text-2xl font-medium">{username || "Shafi nihal"}</span> // if we not found
+                    username means by default if coder didnt provided use shafi nihal but not preferable in production
                     <span className="flex gap-2 font-medium text-gray-600 ">
                         <span>No. 4</span>
                         <span>·</span>
