@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
+import React from "react";
 
 const reactElement = {
     type: "a",
@@ -24,13 +25,19 @@ const AnotherElement = (
     </a>
 );
 
+// if you wanna create a react element this is the syntax that we need to follow the order is also important type, props, children
+const areactElement = React.createElement(
+    "a",
+    { href: "https://google.com", target: "_blank" },
+    "click to visit google",
+);
 
-
-createRoot(document.getElementById("root"))
-    .render
+createRoot(document.getElementById("root")).render(
     // <myApp />
 
     // AnotherElement,
 
     // reactElement,This doesn't works because in there we created type, props, children on my own i gave the definition for them but how come react understands that so it wont work
-    ();
+
+    areactElement,
+);
