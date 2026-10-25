@@ -28,10 +28,10 @@ function App() {
                         Green
                     </button>
                     <button
-                        onClick={() => setColor("blue")}
+                        onClick={() => setColor("orange")}
                         className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
                     >
-                        Blue
+                        Orange
                     </button>
                 </div>
             </div>
