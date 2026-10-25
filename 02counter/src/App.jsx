@@ -9,13 +9,28 @@ function App() {
     // let counter = 15;
 
     const addValue = () => {
-        setCounter(counter + 1); // setCounter is responsible for rendering and updating the value of the negihbouring variable
+        // setCounter(counter + 1); // setCounter is responsible for rendering and updating the value of the negihbouring variable
         // we pass here what's need to update like that
+        // setCounter(counter + 1);
+        // setCounter(counter + 1);
+        // setCounter(counter + 1);
+        //we assume that when we click the add val the current val increase's by 4 but it doesn't because of batching we will learn later
+        // if you want so then we do like
+
+        setCounter(prevCounter => prevCounter + 1);
+        setCounter(prevCounter => prevCounter + 1);
+        setCounter(prevCounter => prevCounter + 1);
+        setCounter(prevCounter => prevCounter + 1);
+
+        // why this works is prevCounter will get's the most updated counter value prevCounter is nothing but Counter itself just a naming convention not really
+        //after 1st function completion counter get's updated and prevcounter gets the updated too so it works.
+        //unlike in counter+1 ever counter has the same value as 15 and after updation it will get value 16
     };
 
     const removeValue = () => {
-        counter = counter - 1;
-        setCounter(counter);
+        // counter = counter - 1;
+        // setCounter(counter);
+        setCounter(counter - 1);
     };
 
     return (
