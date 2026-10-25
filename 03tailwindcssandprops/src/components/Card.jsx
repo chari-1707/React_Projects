@@ -16,6 +16,8 @@ function card({ username }) {
                 <div className="flex">
                     <span className="text-2xl font-medium">{username || "Shafi nihal"}</span> // if we not found
                     username means by default if coder didnt provided use shafi nihal but not preferable in production
+                    // another way is username = "Shafi nihal in the card(username = "Shafi nihal") this is better way
+                    of writing"
                     <span className="flex gap-2 font-medium text-gray-600 ">
                         <span>No. 4</span>
                         <span>·</span>
