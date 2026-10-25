@@ -18,18 +18,21 @@ function App() {
                     <button
                         onClick={() => setColor("red")}
                         className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+                        style={{backgroundColor : "red"}}
                     >
                         Red
                     </button>
                     <button
                         onClick={() => setColor("green")}
                         className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+                        style={{backgroundColor : "green"}}
                     >
                         Green
                     </button>
                     <button
                         onClick={() => setColor("orange")}
                         className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+                        style={{backgroundColor : "orange"}}
                     >
                         Orange
                     </button>
