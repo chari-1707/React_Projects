@@ -31,6 +31,7 @@ const areactElement = React.createElement(
     "a",
     { href: "https://google.com", target: "_blank" },
     "click to visit google",
+    //" " --> // in this place actually what ever we write in the {} that is taken from there and placed here
 );
 
 createRoot(document.getElementById("root")).render(
