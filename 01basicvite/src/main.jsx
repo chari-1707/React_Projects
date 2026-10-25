@@ -27,6 +27,7 @@ const AnotherElement = (
 
 // if you wanna create a react element this is the syntax that we need to follow the order is also important type, props, children
 const areactElement = React.createElement(
+    // This is the object version of Another Element
     "a",
     { href: "https://google.com", target: "_blank" },
     "click to visit google",
@@ -39,5 +40,7 @@ createRoot(document.getElementById("root")).render(
 
     // reactElement,This doesn't works because in there we created type, props, children on my own i gave the definition for them but how come react understands that so it wont work
 
-    areactElement,
+    // areactElement,
+
+    <App />,
 );
