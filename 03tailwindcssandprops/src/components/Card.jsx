@@ -1,6 +1,6 @@
 import React from "react";
 
-function card({ username }) {
+function card({ username = "Shafi nihal", post = "Principal" }) {
     // you can write this or there is another way that is destructure it like what ever you want take that only
     // console.log(props);
     return (
@@ -14,13 +14,10 @@ function card({ username }) {
                     />
                 </div>
                 <div className="flex">
-                    <span className="text-2xl font-medium">{username || "Shafi nihal"}</span> // if we not found
-                    username means by default if coder didnt provided use shafi nihal but not preferable in production
-                    // another way is username = "Shafi nihal in the card(username = "Shafi nihal") this is better way
-                    of writing"
+                    <span className="text-2xl font-medium">{username}</span> //
                     <span className="flex gap-2 font-medium text-gray-600 ">
                         <span>No. 4</span>
-                        <span>·</span>
+                        <span>{post}</span>
                         <span>2025</span>
                     </span>
                 </div>
@@ -30,3 +27,15 @@ function card({ username }) {
 }
 
 export default card;
+
+/*
+{username || "Shafi nihal"}
+
+1.if we not found username means by default if coder didnt provided use shafi nihal but not preferable in production. 
+another way is username = "Shafi nihal in the card(username = "Shafi nihal") this is better way of writing
+"
+
+2. in card we can just simply write the as props and use it as props.username props.X but problem is when coder doesn't provide we need to handle the cases
+
+3. 
+*/
