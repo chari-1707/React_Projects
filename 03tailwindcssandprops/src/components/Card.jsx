@@ -37,5 +37,5 @@ another way is username = "Shafi nihal in the card(username = "Shafi nihal") thi
 
 2. in card we can just simply write the as props and use it as props.username props.X but problem is when coder doesn't provide we need to handle the cases
 
-3. 
+3. we can also pass objects ,arrays what not see the App.jsx for better understanding
 */
