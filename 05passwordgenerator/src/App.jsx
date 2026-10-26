@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
@@ -9,6 +9,8 @@ function App() {
     const [charsAllowed, setCharsAllowed] = useState(false);
     const [numsAllowed, setNumsAllowed] = useState(false);
     const [password, setPassword] = useState("");
+
+    const passwordRef = useRef(null);
 
     const generatePassoword = useCallback(() => {
         let pass = "";
@@ -26,7 +28,10 @@ function App() {
     }, [length, numsAllowed, charsAllowed]); // as soon as these dependcies wont change keep the same function reference if any of these value changes create a new fuction so we wont add the password field here because its constantly changing
 
     const copyPasswordToClipboard = () => {
-        window.navigator.clipboard.writeText(password);
+        passwordRef.current?.select();
+        // passwordRef.current?.setSelectionRange(0, 999); //selects the text from 0 - 999 range or what ever range that you specify
+        // window.navigator.clipboard.writeText(password);
+
     };
 
     useEffect(() => {
@@ -60,6 +65,7 @@ function App() {
                             min={6}
                             max={100}
                             value={length}
+                            ref={passwordRef}
                             className="cursor-pointer"
                             onChange={e => setLength(e.target.value)}
                             id="length"
