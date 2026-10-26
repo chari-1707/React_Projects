@@ -23,11 +23,15 @@ function App() {
         }
 
         setPassword(pass);
-    }, [length, numsAllowed, charsAllowed]); // these array is the dependices they should not change
+    }, [length, numsAllowed, charsAllowed]); // as soon as these dependcies wont change keep the same function reference if any of these value changes create a new fuction so we wont add the password field here because its constantly changing
+
+    const copyPasswordToClipboard = () => {
+        window.navigator.clipboard.writeText(password);
+    };
 
     useEffect(() => {
         generatePassoword();
-    }, [length, charsAllowed, numsAllowed]); // as soon as these changes this will trigger and works
+    }, [length, charsAllowed, numsAllowed]); // as soon as these dependencies changes , this will trigger and works
 
     return (
         <>
@@ -41,7 +45,12 @@ function App() {
                         placeholder="password"
                         readOnly
                     />
-                    <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">copy</button>
+                    <button
+                        onClick={copyPasswordToClipboard}
+                        className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
+                    >
+                        copy
+                    </button>
                 </div>
 
                 <div className="flex text-sm gap-x-2">
