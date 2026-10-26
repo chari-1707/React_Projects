@@ -23,7 +23,7 @@ function App() {
         }
 
         setPassword(pass);
-    });
+    }, [length, numsAllowed, charsAllowed]); // these array is the dependices they should not change
 
     return (
         <>
@@ -84,3 +84,13 @@ function App() {
 }
 
 export default App;
+
+/**
+ const myFunction = useCallback(() => {
+    // your logic here
+}, [dependency1, dependency2]);
+
+Think of the dependency array as telling React: 
+"These are the values my function relies on. If one changes, my cached function may need to be updated."
+
+**/
