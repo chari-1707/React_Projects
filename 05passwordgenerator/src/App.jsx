@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
@@ -24,6 +24,10 @@ function App() {
 
         setPassword(pass);
     }, [length, numsAllowed, charsAllowed]); // these array is the dependices they should not change
+
+    useEffect(() => {
+        generatePassoword();
+    }, [length, charsAllowed, numsAllowed]); // as soon as these changes this will trigger and works
 
     return (
         <>
