@@ -24,7 +24,9 @@ function App() {
                     />
                     <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">copy</button>
                 </div>
+
                 <div className="flex text-sm gap-x-2">
+
                     <div className="flex items-center gap-x-1">
                         <input
                             type="range"
@@ -37,6 +39,7 @@ function App() {
                         />
                         <label htmlFor="length">{length}</label>
                     </div>
+
                     <div className="flex items-center gap-x-1">
                         <input
                             type="checkbox"
@@ -48,6 +51,7 @@ function App() {
                         />
                         <label htmlFor="number">Numbers</label>
                     </div>
+
                     <div className="flex items-center gap-x-1">
                         <input
                             type="checkbox"
@@ -59,6 +63,7 @@ function App() {
                         />
                         <label htmlFor="characterInput">Characters</label>
                     </div>
+                    
                 </div>
             </div>
         </>
