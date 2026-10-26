@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
@@ -9,6 +9,21 @@ function App() {
     const [charsAllowed, setCharsAllowed] = useState(false);
     const [numsAllowed, setNumsAllowed] = useState(false);
     const [password, setPassword] = useState("");
+
+    const generatePassoword = useCallback(() => {
+        let pass = "";
+        let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+        if (numsAllowed) str += "0123456789";
+        if (charsAllowed) str += "!@#$%^&*-_+=[]{}~`";
+
+        for (let i = 1; i <= length; i++) {
+            let char = Math.floor(Math.random() * str.length + 1);
+            pass += str.charAt(char);
+        }
+
+        setPassword(pass);
+    });
 
     return (
         <>
@@ -26,7 +41,6 @@ function App() {
                 </div>
 
                 <div className="flex text-sm gap-x-2">
-
                     <div className="flex items-center gap-x-1">
                         <input
                             type="range"
@@ -63,7 +77,6 @@ function App() {
                         />
                         <label htmlFor="characterInput">Characters</label>
                     </div>
-                    
                 </div>
             </div>
         </>
