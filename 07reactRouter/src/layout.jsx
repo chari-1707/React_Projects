@@ -5,7 +5,13 @@ import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
 function layout() {
-    return <div>layout</div>;
+    return (
+        <>
+            <Header />
+            <Outlet />
+            <Footer />
+        </>
+    );
 }
 
 export default layout;
