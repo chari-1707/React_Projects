@@ -9,7 +9,7 @@ import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import ContactUs from "./components/ContactUs/ContactUs.jsx";
 import User from "./components/User/User.jsx";
-import GitHub from "./components/GitHub/GitHub";
+import GitHub, { gitHubInfoLoader } from "./components/GitHub/GitHub";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,7 +20,9 @@ const router = createBrowserRouter(
             <Route path="/user/" element={<User />}>
                 <Route path=":userid" element={<User />} />
             </Route>
-            <Route path="/github" element={<GitHub />} />
+            <Route loader={gitHubInfoLoader} path="/github" element={<GitHub />} /> // here loader is for pre loading of
+            data before user clicks on github this mechanism is seen in next js but if we want here then we use like
+            this
             <Route path="*" element={<div>Not Found</div>} /> //make sure to keep this * in the lats of code because it
             checks by line by line of path if not mataches any above them then this will be executed
         </Route>,
