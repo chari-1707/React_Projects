@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import UserContext from "../context/UserContext.js";
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const { setUser } = useContext(UserContext); // we extract the data from the userContext
+
     const handleSubmit = e => {
-        //Prevents the page from refreshing
+        e.preventDefault();
+        setUser({ username, password }); // here we used it and this will push the data into the GLOBAL
     };
 
     return (
