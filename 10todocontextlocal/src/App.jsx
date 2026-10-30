@@ -9,7 +9,7 @@ function App() {
     const [count, setCount] = useState(0);
 
     return (
-        <TodoProvider>
+        <TodoProvider value={{ todos, addTodo, updateTodo, deleteTodo, toggeleComplete }}>
             <h1 className="text-3xl font-bold underline">Hello World!</h1>
         </TodoProvider>
     );
