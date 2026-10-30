@@ -8,6 +8,13 @@ import { TodoProvider } from "./context";
 function App() {
     const [todos, setTodos] = useState([]);
 
+    /*
+    NOTE:
+        if we are writing the functionalities here then make sure that name's matches so it automatically map's to the function's and variables you wrote in the value
+
+
+*/
+
     const addTodo = todo => {
         setTodos(prev => [
             {
